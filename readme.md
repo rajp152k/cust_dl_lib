@@ -5,3 +5,8 @@
 all datasets stored on google drive 
 python files edited on a local machine  
 ipython files edited on colab
+
+# dir info :
+	- ipynbs: contains ipython notebooks used while testing and creating importables
+	- exps : contains pys exported from ipynb cells for creating importables
+	
