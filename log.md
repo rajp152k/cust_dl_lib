@@ -20,3 +20,12 @@
 	- progression: looping--:element wise operation--:broadcasting--:einstein summations
 	- testing on MNIST
 		- creating a forward pass with a weight matrix 
+
+## Propogation
+
+	- implementing forward and backward passes for a single hidden layer
+	- studied effects of initialisation 
+		- read the Kaiming He initialisation paper
+	- maintaining variance of activations close to 1 
+		- to allow deeper networks to converge efficiently
+	
