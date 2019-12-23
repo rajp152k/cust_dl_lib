@@ -28,4 +28,5 @@
 		- read the Kaiming He initialisation paper
 	- maintaining variance of activations close to 1 
 		- to allow deeper networks to converge efficiently
-	
+	- implemented linear and the ReLU layer and refactored as classes
+	- can use nn.Linear and nn.ReLU from now onwards from torch
