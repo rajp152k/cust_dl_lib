@@ -21,7 +21,7 @@
 	- testing on MNIST
 		- creating a forward pass with a weight matrix 
 
-## Propogation
+## Propogation:
 
 	- implementing forward and backward passes for a single hidden layer
 	- studied effects of initialisation 
