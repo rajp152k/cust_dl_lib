@@ -6,6 +6,7 @@
 
 from exps.nb_01 import *
 
+datasets_path = "/content/drive/My Drive/fast.ai v3/datasets"
 def get_data():
     MNIST_URL='http://deeplearning.net/data/mnist/mnist.pkl'
     path = datasets.download_data(url=MNIST_URL,fname=Path(datasets_path)/'MNIST.gz',ext='.gz')
