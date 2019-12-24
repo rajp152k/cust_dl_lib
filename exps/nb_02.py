@@ -9,7 +9,7 @@ from exps.nb_01 import *
 datasets_path = "/content/drive/My Drive/fast.ai v3/datasets"
 def get_data():
     MNIST_URL='http://deeplearning.net/data/mnist/mnist.pkl'
-    path = datasets.download_data(url=MNIST_URL,fname=Path(datasets_path)/'MNIST.gz',ext='.gz')
+    path = datasets.download_data(url=MNIST_URL,fname="/content/drive/My Drive/fast.ai v3/datasets/MNIST.gz",ext='.gz')
     with gzip.open(path,'rb') as f:
         ((x_train,y_train),(x_valid,y_valid),_) = pickle.load(f,encoding='latin1')
     return map(tensor,((x_train,y_train,x_valid,y_valid)))
