@@ -10,3 +10,4 @@ ipython files edited on colab <br>
 	- ipynbs: contains ipython notebooks used while testing and creating importables
 	- exps : contains pys exported from ipynb cells for creating importables
 	
+### Read progression log(log.md) for more info

@@ -30,3 +30,10 @@
 		- to allow deeper networks to converge efficiently
 	- implemented linear and the ReLU layer and refactored as classes
 	- can use nn.Linear and nn.ReLU from now onwards from torch
+
+## Batches:
+	
+	- refactor the code a  bit to make it more readable:
+		- optimizer class created
+	- implemented the cross entropy loss function : combining negative log loss and softmax 
+	- yielding data : batch processing capabilities introduced 
