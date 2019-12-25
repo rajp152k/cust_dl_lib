@@ -37,3 +37,11 @@
 		- optimizer class created
 	- implemented the cross entropy loss function : combining negative log loss and softmax 
 	- yielding data : batch processing capabilities introduced 
+
+## Model Flexibility:
+
+	- refactored some code to make dataloaders more compact 
+	- introducing callback functionality: a step towards using hooks
+		- allows lots of testing and experimentation 
+	- created a runner to allow for compact passage of hyperparameters to again allow for convenient updates when experimenting
+	 
