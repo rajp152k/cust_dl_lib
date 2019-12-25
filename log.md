@@ -45,3 +45,8 @@
 		- allows lots of testing and experimentation 
 	- created a runner to allow for compact passage of hyperparameters to again allow for convenient updates when experimenting
 	 
+
+## Scheduling 
+
+	- adding annealing capabilities 
+		- using the callback functionality gained in the previous update
