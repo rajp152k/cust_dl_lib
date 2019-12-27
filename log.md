@@ -50,3 +50,4 @@
 
 	- adding annealing capabilities 
 		- using the callback functionality gained in the previous update
+	- also tested the recorder class for storage of losses and learning rates
