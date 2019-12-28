@@ -27,4 +27,5 @@ from torch.utils.data import DataLoader,SequentialSampler,RandomSampler
 def get_dls(train_ds,valid_ds,bs,**kwargs):
     train_dl = DataLoader(train_ds,bs,shuffle=True,**kwargs)
     valid_dl = DataLoader(valid_ds,bs*2,**kwargs)
+    # using pytorch's default DataLoader class
     return train_dl,valid_dl

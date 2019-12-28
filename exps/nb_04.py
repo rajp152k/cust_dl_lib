@@ -45,6 +45,9 @@ class Callback():
     _order=0
     def set_runner(self,run): self.run=run
     def __getattr__(self,k): return getattr(self.run,k)
+    # __getattr__ is only accessed if that attribute is not present in the 
+    # class: in that case it'll search for the corresponding attribute in the 
+    # Runner class (which stores it all) : easy Refactoring.
     @property
     def name(self):
         name = re.sub(r'Callback$','',self.__class__.__name__)
@@ -52,6 +55,8 @@ class Callback():
 
 
 class TrainEvalCallback(Callback):
+    # managing switches between training and validation
+    # i.e. moving the model tensors between training and evaluation mode
     def begin_fit(self):
         self.run.n_epochs=0.
         self.run.n_iter=0
@@ -81,11 +86,17 @@ def listify(o):
     return [o]
 
 class Runner():
+    #stores all the callbacks as a list:
+    #pass in modifications as back-callable functions
     def __init__(self,cbs=None,cb_funcs=None):
         cbs = listify(cbs)
+        # creating an iterable list of the callbacks 
         for cbf in listify(cb_funcs):
             cb = cbf()
             setattr(self,cb.name,cb)
+            # look into behaviour of setattr:
+                # creates an attribute if one does not exist with the 
+                # corresponding value
             cbs.append(cb)
         self.stop,self.cbs = False,[TrainEvalCallback()]+cbs
 
@@ -97,6 +108,8 @@ class Runner():
     def loss_func(self) : return self.learn.loss_func
     @property
     def data(self) :return self.learn.data
+    # read up on property objects and decorators:
+    # saving self from future refactorin in case of minor changes
 
     def one_batch(self, xb, yb):
         self.xb,self.yb = xb,yb
@@ -110,6 +123,10 @@ class Runner():
         self.opt.step()
         if self('after_step'): return
         self.opt.zero_grad()
+        # if any of the attributes  is true, we stop the batch
+        # for continuing, maintain false as value of these attributes
+        # doing so because python returns None by default which is False
+        # so have to explicitly return True in order to Stop
 
     def all_batches(self, dl):
         self.iters = len(dl)
@@ -139,6 +156,8 @@ class Runner():
 
     def __call__(self, cb_name):
         for cb in sorted(self.cbs, key=lambda x: x._order):
+            # implementing a hidded attribute order for callbacks
+            # in order to avoid non-sensical executions of callbacks 
             f = getattr(cb, cb_name, None)
             if f and f(): return True
         return False
