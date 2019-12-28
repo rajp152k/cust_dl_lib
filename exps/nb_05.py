@@ -34,12 +34,12 @@ class ParamScheduler(Callback):
         if self.in_train:self.set_param()
 
 def annealer(f):
+    # decorating 
     def _inner(start,end): return partial(f,start,end)
     return _inner
 
 @annealer
 def sched_lin(start,end,pos): return start + pos*(end-start)
-
 @annealer
 def sched_cos(start, end, pos): return start + (1 + math.cos(math.pi*(1-pos))) * (end-start) / 2
 @annealer
@@ -50,11 +50,12 @@ def sched_exp(start, end, pos): return start * (end/start) ** pos
 def cos_1cycle_anneal(start, high, end):
     return [sched_cos(start, high), sched_cos(high, end)]
 
-# to plot tensors:
+# to enable plotting tensors
 torch.Tensor.ndim = property(lambda x: len(x.shape))
 
 def combine_scheds(pcts,scheds):
-    assert sum(pcts) == 1
+    # decorating 
+    assert sum(pcts) == 1 # fractions of separate schedulers should sum to 1 
     pcts = tensor([0]+listify(pcts))
     assert torch.all(pcts>=0)
     pcts = torch.cumsum(pcts,0)
