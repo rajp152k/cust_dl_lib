@@ -56,3 +56,9 @@
 	
 	- adding an Lr finder to initialise properly using the callback functionality just added
 	
+## Hooks:
+	
+	- getting into hooking the statistics of the parameters and the parameters themeselves using the callback functionality just created
+	- then  implementing a class that mimics ,to an extent, the inbuilt functionality of pytorch hooks
+	- testing the hooking functionality for the initialization of parameters by different norms: kaiming uniform and standard, for instance
+	- Testing these on convolution layers rather than the fully connected layers that have been used in the previous exports
