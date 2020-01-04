@@ -33,6 +33,12 @@ def view_tfm(*size):
     def _inner(x): return x.view(*((-1,)+size))
     return _inner
 
+def get_runner(model,data,lr=0.6,cbs=None,opt_func=None,loss_func=F.cross_entropy):
+    if opt_func is None: opt_func = optim.SGD
+    opt = opt_func(model.parameters(),lr=lr)
+    learn = Learner(model,opt,loss_func,data)
+    return learn,Runner(cb_funcs=listify(cbs))
+
 def children(m): return list(m.children())
 
 class Hook():
