@@ -62,3 +62,8 @@
 	- then  implementing a class that mimics ,to an extent, the inbuilt functionality of pytorch hooks
 	- testing the hooking functionality for the initialization of parameters by different norms: kaiming uniform and standard, for instance
 	- Testing these on convolution layers rather than the fully connected layers that have been used in the previous exports
+
+## Normalization:
+	- discuss mainly about batch norm and it short  comings after adding the functionality 
+	- discuss other alternatives and their limitations
+	- come up with a batch norm using a running average for the trainable parameters concerned in the training phase as well rather than just the inference phase 
