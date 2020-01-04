@@ -4,6 +4,8 @@
 #################################################
 # file to edit: dev_nb/06_hooks.ipynb
 
+from exps.nb_05a import *
+
 def normalize_to(train,valid):
     m,s = train.mean(),train.std()
     return normalize(train,m,s),normalize(valid,m,s)
