@@ -64,6 +64,12 @@
 	- Testing these on convolution layers rather than the fully connected layers that have been used in the previous exports
 
 ## Normalization:
+
 	- discuss mainly about batch norm and it short  comings after adding the functionality 
 	- discuss other alternatives and their limitations
 	- come up with a batch norm using a running average for the trainable parameters concerned in the training phase as well rather than just the inference phase 
+
+## LSUV:
+	
+	- another way to initialize the layers dynamically depending on the past acitvations
+	- easier than kaiming uniform/normal and just dividing the stds and subtracting the means from biases to obtain a near zero mean and a variance very close to one.
