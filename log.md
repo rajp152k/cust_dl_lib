@@ -73,3 +73,8 @@
 	
 	- another way to initialize the layers dynamically depending on the past acitvations
 	- easier than kaiming uniform/normal and just dividing the stds and subtracting the means from biases to obtain a near zero mean and a variance very close to one.
+
+## Datablock API:
+
+	- recreating the convenience to manage data in different forms.
+	- from handling, splitting, labelling, vocab creation to any other functionality: added for convenience
