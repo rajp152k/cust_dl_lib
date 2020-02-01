@@ -86,3 +86,7 @@
 		- exponentially weighted moving average for the step
 		- debias it 
 	- Then building a recent optimizer: LAMB : fork of adam for a layer-wise approach
+
+## Minor updates:
+	
+	- refactoring runner and learner into one learner
