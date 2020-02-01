@@ -82,3 +82,7 @@
 ## Optimizer:
 	
 	- creating a generic base optimizer class to allow for minow tweaks resulting in the desired outcome.
+	- Building adam first using the generic class:
+		- exponentially weighted moving average for the step
+		- debias it 
+	- Then building a recent optimizer: LAMB : fork of adam for a layer-wise approach
