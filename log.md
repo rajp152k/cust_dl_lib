@@ -78,3 +78,7 @@
 
 	- recreating the convenience to manage data in different forms.
 	- from handling, splitting, labelling, vocab creation to any other functionality: added for convenience
+
+## Optimizer:
+	
+	- creating a generic base optimizer class to allow for minow tweaks resulting in the desired outcome.
